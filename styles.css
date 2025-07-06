@@ -20,7 +20,6 @@ body {
     flex-direction: column; /* Stacks content vertically */
     justify-content: flex-start; /* Aligns content to the top initially */
     align-items: center; /* Centers content horizontally */
-    color: white; /* Sets text color to white */
     padding: 2rem; /* Adds padding around content for smaller screens */
     /* Add padding-top to hero-section to account for fixed header, preventing content overlap */
     padding-top: 5rem; /* Adjust this value if the header is taller or you want more space */
@@ -64,7 +63,7 @@ body {
 /* Styles for the logo text (the "charity: water" span) */
 .logo-text {
     /* Tailwind classes are already present in HTML, but adding explicit styles here for clarity/override */
-    color: white;
+    color: white; /* Keeping logo white or adjust if needed */
     font-size: 1.125rem; /* Equivalent to text-lg */
     font-weight: 700; /* Equivalent to font-bold */
 }
@@ -78,6 +77,7 @@ body {
     margin-bottom: 1rem; /* Space below the headline */
     max-width: 600px; /* Limits the width of the text */
     text-align: left; /* Aligns text to the left */
+    color: #FFF7E1; /* Header color */
 }
 
 /* Styles for the sub-text/descriptive paragraph */
@@ -88,12 +88,13 @@ body {
     margin-bottom: 2rem; /* Space below the sub-text */
     max-width: 500px; /* Limits the width of the text */
     text-align: left; /* Aligns text to the left */
+    color: #FFF7E1; /* Subheader color */
 }
 
 /* Styles for the call-to-action button */
 .action-button {
     background-color: #FFD700; /* Gold color */
-    color: #000; /* Black text color */
+    color: #003366; /* Corrected: CTA text color to #003366 */
     padding: 1rem 2.5rem; /* Padding inside the button */
     border-radius: 9999px; /* Makes the button fully rounded */
     font-weight: 600; /* Semi-bold text */
