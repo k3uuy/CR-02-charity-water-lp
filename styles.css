@@ -14,7 +14,7 @@ body {
     background-size: cover; /* Ensures image covers the entire area */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents image from repeating */
-    position: relative; /* Needed for positioning the overlay */
+    position: relative; /* Needed for positioning the overlay AND the content-container */
     min-height: 100vh; /* Makes the section take at least the full viewport height */
     display: flex; /* Enables flexbox for content alignment */
     flex-direction: column; /* Stacks content vertically */
@@ -22,6 +22,8 @@ body {
     align-items: center; /* Centers content horizontally */
     color: white; /* Sets text color to white */
     padding: 2rem; /* Adds padding around content for smaller screens */
+    /* Add padding-top to hero-section to account for fixed header, preventing content overlap */
+    padding-top: 5rem; /* Adjust this value if the header is taller or you want more space */
 }
 
 /* Pseudo-element for the dark overlay on the background image */
@@ -45,21 +47,28 @@ body {
     display: flex; /* Enables flexbox */
     flex-direction: column; /* Stacks items vertically */
     align-items: flex-start; /* Aligns text to the left */
-    padding-top: 2rem; /* Space for the header on smaller screens */
+    /* Removed padding-top here as hero-section now handles space for fixed header */
 }
 
 /* Styles for the header containing the logo */
 .header {
-    width: 100%; /* Takes full width of its parent */
-    display: flex; /* Enables flexbox */
-    justify-content: flex-start; /* Aligns logo to the left */
-    padding-bottom: 4rem; /* Space between header and main content */
+    /* Changed to fixed positioning for robust top-left placement relative to the viewport */
+    position: fixed; /* Positions header relative to the viewport */
+    top: 2rem; /* Distance from the top of the viewport */
+    left: 2rem; /* Distance from the left of the viewport */
+    width: auto; /* Allows header to size based on content */
+    z-index: 10; /* Ensures it's on top of all other content */
+    /* Removed justify-content and padding-bottom as they are not needed for fixed positioning */
 }
 
-/* Styles for the logo image */
-.logo {
-    height: 30px; /* Sets a fixed height for the placeholder logo */
+/* Styles for the logo text (the "charity: water" span) */
+.logo-text {
+    /* Tailwind classes are already present in HTML, but adding explicit styles here for clarity/override */
+    color: white;
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: 700; /* Equivalent to font-bold */
 }
+
 
 /* Styles for the main headline */
 .main-text {
@@ -104,24 +113,11 @@ body {
     .hero-section {
         justify-content: center; /* Centers content vertically */
         align-items: flex-start; /* Aligns content to the left */
-        padding-left: 8rem; /* More left padding */
+        padding-left: 8rem; /* More left padding for main content */
         padding-right: 8rem; /* More right padding */
     }
     .content-container {
-        padding-top: 0; /* Removes extra top padding when centered */
-    }
-    .main-text {
-        font-size: 3.5rem; /* Larger font for desktop */
-    }
-    .sub-text {
-        font-size: 1.25rem; /* Larger font for desktop */
-    }
-    .header {
-        position: absolute; /* Positions header absolutely to top-left */
-        top: 2rem;
-        left: 8rem;
-        width: auto; /* Allows header to size based on content */
-        padding-bottom: 0; /* Removes bottom padding */
+        /* No padding-top needed here anymore as hero-section handles it */
     }
 }
 
@@ -129,9 +125,7 @@ body {
 @media (max-width: 767px) {
     .hero-section {
         padding: 1.5rem; /* Adjusts padding for smaller screens */
-    }
-    .header {
-        padding-bottom: 2rem; /* Adjusts space for header on small screens */
+        padding-top: 5rem; /* Ensure padding-top for fixed header on mobile too */
     }
     .main-text {
         font-size: 2rem; /* Smaller font for mobile */
