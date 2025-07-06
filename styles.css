@@ -1,104 +1,114 @@
 /* style.css */
 
+/* Base styles for the body, setting font and preventing horizontal scroll */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+/* Styles for the main hero section (full-screen banner) */
 .hero-section {
-    background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image'); /* Placeholder image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    min-height: 100vh; /* Ensure it takes full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to the top initially */
-    align-items: center;
-    color: white;
-    padding: 2rem; /* Add some padding for smaller screens */
+    background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image'); /* Placeholder background image */
+    background-size: cover; /* Ensures image covers the entire area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    position: relative; /* Needed for positioning the overlay */
+    min-height: 100vh; /* Makes the section take at least the full viewport height */
+    display: flex; /* Enables flexbox for content alignment */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: flex-start; /* Aligns content to the top initially */
+    align-items: center; /* Centers content horizontally */
+    color: white; /* Sets text color to white */
+    padding: 2rem; /* Adds padding around content for smaller screens */
 }
 
-/* Overlay for better text readability */
+/* Pseudo-element for the dark overlay on the background image */
 .hero-section::before {
-    content: '';
-    position: absolute;
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Positions it relative to the hero-section */
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-    z-index: 1;
+    bottom: 0; /* Makes it cover the entire hero-section */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures it's above the background image but below the text */
 }
 
+/* Container for the main text and button content */
 .content-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px; /* Max width for content */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
-    padding-top: 2rem; /* Space for the header */
+    position: relative; /* Needed for z-index to be above the overlay */
+    z-index: 2; /* Ensures content is visible above the overlay */
+    max-width: 1200px; /* Limits the maximum width of the content */
+    width: 100%; /* Ensures it takes full width up to max-width */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns text to the left */
+    padding-top: 2rem; /* Space for the header on smaller screens */
 }
 
+/* Styles for the header containing the logo */
 .header {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Align logo to the left */
+    width: 100%; /* Takes full width of its parent */
+    display: flex; /* Enables flexbox */
+    justify-content: flex-start; /* Aligns logo to the left */
     padding-bottom: 4rem; /* Space between header and main content */
 }
 
+/* Styles for the logo image */
 .logo {
-    height: 30px; /* Adjust logo size */
+    height: 30px; /* Sets a fixed height for the placeholder logo */
 }
 
+/* Styles for the main headline */
 .main-text {
-    font-size: 2.5rem; /* Large font size for main heading */
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    max-width: 600px; /* Limit width of main text */
-    text-align: left;
+    font-size: 2.5rem; /* Large font size */
+    font-weight: 700; /* Bold font weight */
+    line-height: 1.2; /* Line height for readability */
+    margin-bottom: 1rem; /* Space below the headline */
+    max-width: 600px; /* Limits the width of the text */
+    text-align: left; /* Aligns text to the left */
 }
 
+/* Styles for the sub-text/descriptive paragraph */
 .sub-text {
-    font-size: 1.125rem; /* Medium font size for sub-text */
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    max-width: 500px; /* Limit width of sub-text */
-    text-align: left;
+    font-size: 1.125rem; /* Medium font size */
+    font-weight: 400; /* Normal font weight */
+    line-height: 1.5; /* Line height for readability */
+    margin-bottom: 2rem; /* Space below the sub-text */
+    max-width: 500px; /* Limits the width of the text */
+    text-align: left; /* Aligns text to the left */
 }
 
+/* Styles for the call-to-action button */
 .action-button {
-    background-color: #FFD700; /* Gold color from design */
-    color: #000; /* Black text */
-    padding: 1rem 2.5rem;
-    border-radius: 9999px; /* Fully rounded */
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #FFD700; /* Gold color */
+    color: #000; /* Black text color */
+    padding: 1rem 2.5rem; /* Padding inside the button */
+    border-radius: 9999px; /* Makes the button fully rounded */
+    font-weight: 600; /* Semi-bold text */
+    text-decoration: none; /* Removes underline from link */
+    display: inline-block; /* Allows padding and width/height to be applied */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Hover effect for the button */
 .action-button:hover {
     background-color: #e6c200; /* Slightly darker gold on hover */
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for screens wider than 768px (tablets and desktops) */
 @media (min-width: 768px) {
     .hero-section {
-        justify-content: center; /* Center content vertically on larger screens */
-        align-items: flex-start; /* Align content to the left on larger screens */
-        padding-left: 8rem; /* More padding on larger screens */
-        padding-right: 8rem;
+        justify-content: center; /* Centers content vertically */
+        align-items: flex-start; /* Aligns content to the left */
+        padding-left: 8rem; /* More left padding */
+        padding-right: 8rem; /* More right padding */
     }
     .content-container {
-        padding-top: 0; /* No extra top padding when centered */
+        padding-top: 0; /* Removes extra top padding when centered */
     }
     .main-text {
         font-size: 3.5rem; /* Larger font for desktop */
@@ -107,36 +117,37 @@ body {
         font-size: 1.25rem; /* Larger font for desktop */
     }
     .header {
-        position: absolute; /* Position header absolutely to top-left */
+        position: absolute; /* Positions header absolutely to top-left */
         top: 2rem;
         left: 8rem;
-        width: auto; /* Allow header to size based on content */
-        padding-bottom: 0;
+        width: auto; /* Allows header to size based on content */
+        padding-bottom: 0; /* Removes bottom padding */
     }
 }
 
+/* Responsive adjustments for screens up to 767px wide (mobile devices) */
 @media (max-width: 767px) {
     .hero-section {
-        padding: 1.5rem; /* Adjust padding for smaller screens */
+        padding: 1.5rem; /* Adjusts padding for smaller screens */
     }
     .header {
-        padding-bottom: 2rem; /* Adjust space for header on small screens */
+        padding-bottom: 2rem; /* Adjusts space for header on small screens */
     }
     .main-text {
         font-size: 2rem; /* Smaller font for mobile */
-        text-align: center; /* Center text on mobile */
-        max-width: 100%;
+        text-align: center; /* Centers text on mobile */
+        max-width: 100%; /* Allows text to take full width */
     }
     .sub-text {
         font-size: 1rem; /* Smaller font for mobile */
-        text-align: center; /* Center text on mobile */
-        max-width: 100%;
+        text-align: center; /* Centers text on mobile */
+        max-width: 100%; /* Allows text to take full width */
     }
     .content-container {
-        align-items: center; /* Center content horizontally on mobile */
+        align-items: center; /* Centers content horizontally on mobile */
     }
     .action-button {
         width: 100%; /* Full width button on mobile */
-        text-align: center;
+        text-align: center; /* Centers button text */
     }
 }
