@@ -61,7 +61,7 @@ body {
 
 /* Styles for the logo image (cwlogowhite.png) */
 .logo-image {
-    width: 300px; /* <--- INCREASED SIZE BY 1.5 TIMES (200px * 1.5 = 300px) */
+    width: 300px; /* Current size for the logo */
     height: auto; /* Maintain aspect ratio */
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); /* Optional: adds a subtle shadow for better visibility */
 }
@@ -97,7 +97,7 @@ body {
     /* Apply Proxima Nova to the button text */
     font-family: "proxima-nova", sans-serif;
     background-color: #FFD700;
-    color: #003366;
+    color: #00008B; /* <--- CHANGED TO A DARKER BLUE FOR BETTER CONTRAST ON YELLOW */
     padding: 1rem 2.5rem;
     border-radius: 9999px;
     font-weight: 600;
