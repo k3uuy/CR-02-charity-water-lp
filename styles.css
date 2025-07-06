@@ -2,7 +2,8 @@
 
 /* Base styles for the body, setting font and preventing horizontal scroll */
 body {
-    font-family: 'Inter', sans-serif;
+    /* Set Proxima Nova as the default font for the entire body */
+    font-family: "proxima-nova", sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
@@ -10,9 +11,9 @@ body {
 
 /* Styles for the main hero section (full-screen banner) */
 .hero-section {
-    background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image'); /* Placeholder background image */
+    background-image: url('img/Madagascar_2019_CG-4322.jpg');
     background-size: cover; /* Ensures image covers the entire area */
-    background-position: center; /* Centers the background image */
+    background-position: 50% 10%; /* Adjust as desired for background image "zoom" */
     background-repeat: no-repeat; /* Prevents image from repeating */
     position: relative; /* Needed for positioning the overlay AND the content-container */
     min-height: 100vh; /* Makes the section take at least the full viewport height */
@@ -51,96 +52,97 @@ body {
 
 /* Styles for the header containing the logo */
 .header {
-    /* Changed to fixed positioning for robust top-left placement relative to the viewport */
     position: fixed; /* Positions header relative to the viewport */
     top: 2rem; /* Distance from the top of the viewport */
     left: 2rem; /* Distance from the left of the viewport */
     width: auto; /* Allows header to size based on content */
     z-index: 10; /* Ensures it's on top of all other content */
-    /* Removed justify-content and padding-bottom as they are not needed for fixed positioning */
 }
 
-/* Styles for the logo text (the "charity: water" span) */
-.logo-text {
-    /* Tailwind classes are already present in HTML, but adding explicit styles here for clarity/override */
-    color: white; /* Keeping logo white or adjust if needed */
-    font-size: 1.125rem; /* Equivalent to text-lg */
-    font-weight: 700; /* Equivalent to font-bold */
+/* Styles for the logo image (cwlogowhite.png) */
+.logo-image {
+    width: 200px; /* <--- INCREASED SIZE AGAIN! */
+    height: auto; /* Maintain aspect ratio */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); /* Optional: adds a subtle shadow for better visibility */
 }
-
 
 /* Styles for the main headline */
 .main-text {
-    font-size: 2.5rem; /* Large font size */
-    font-weight: 700; /* Bold font weight */
-    line-height: 1.2; /* Line height for readability */
-    margin-bottom: 1rem; /* Space below the headline */
-    max-width: 600px; /* Limits the width of the text */
-    text-align: left; /* Aligns text to the left */
-    color: #FFF7E1; /* Header color */
+    /* Apply Proxima Nova to the main headline */
+    font-family: "proxima-nova", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    text-align: left;
+    color: #FFF7E1;
 }
 
 /* Styles for the sub-text/descriptive paragraph */
 .sub-text {
-    font-size: 1.125rem; /* Medium font size */
-    font-weight: 400; /* Normal font weight */
-    line-height: 1.5; /* Line height for readability */
-    margin-bottom: 2rem; /* Space below the sub-text */
-    max-width: 500px; /* Limits the width of the text */
-    text-align: left; /* Aligns text to the left */
-    color: #FFF7E1; /* Subheader color */
+    /* Apply Proxima Nova to the sub-text */
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    text-align: left;
+    color: #FFF7E1;
 }
 
 /* Styles for the call-to-action button */
 .action-button {
-    background-color: #FFD700; /* Gold color */
-    color: #003366; /* Corrected: CTA text color to #003366 */
-    padding: 1rem 2.5rem; /* Padding inside the button */
-    border-radius: 9999px; /* Makes the button fully rounded */
-    font-weight: 600; /* Semi-bold text */
-    text-decoration: none; /* Removes underline from link */
-    display: inline-block; /* Allows padding and width/height to be applied */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* Apply Proxima Nova to the button text */
+    font-family: "proxima-nova", sans-serif;
+    background-color: #FFD700;
+    color: #003366;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover effect for the button */
 .action-button:hover {
-    background-color: #e6c200; /* Slightly darker gold on hover */
+    background-color: #e6c200;
 }
 
 /* Responsive adjustments for screens wider than 768px (tablets and desktops) */
 @media (min-width: 768px) {
     .hero-section {
-        justify-content: center; /* Centers content vertically */
-        align-items: flex-start; /* Aligns content to the left */
-        padding-left: 8rem; /* More left padding for main content */
-        padding-right: 8rem; /* More right padding */
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 8rem;
+        padding-right: 8rem;
     }
-    /* No additional styles needed for .content-container at this breakpoint */
 }
 
 /* Responsive adjustments for screens up to 767px wide (mobile devices) */
 @media (max-width: 767px) {
     .hero-section {
-        padding: 1.5rem; /* Adjusts padding for smaller screens */
-        padding-top: 5rem; /* Ensure padding-top for fixed header on mobile too */
+        padding: 1.5rem;
+        padding-top: 5rem;
     }
     .main-text {
-        font-size: 2rem; /* Smaller font for mobile */
-        text-align: center; /* Centers text on mobile */
-        max-width: 100%; /* Allows text to take full width */
+        font-size: 2rem;
+        text-align: center;
+        max-width: 100%;
     }
     .sub-text {
-        font-size: 1rem; /* Smaller font for mobile */
-        text-align: center; /* Centers text on mobile */
-        max-width: 100%; /* Allows text to take full width */
+        font-size: 1rem;
+        text-align: center;
+        max-width: 100%;
     }
     .content-container {
-        align-items: center; /* Centers content horizontally on mobile */
+        align-items: center;
     }
     .action-button {
-        width: 100%; /* Full width button on mobile */
-        text-align: center; /* Centers button text */
+        width: 100%;
+        text-align: center;
     }
 }
