@@ -116,9 +116,7 @@ body {
         padding-left: 8rem; /* More left padding for main content */
         padding-right: 8rem; /* More right padding */
     }
-    .content-container {
-        /* No padding-top needed here anymore as hero-section handles it */
-    }
+    /* No additional styles needed for .content-container at this breakpoint */
 }
 
 /* Responsive adjustments for screens up to 767px wide (mobile devices) */
