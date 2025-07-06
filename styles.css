@@ -97,19 +97,20 @@ body {
     /* Apply Proxima Nova to the button text */
     font-family: "proxima-nova", sans-serif;
     background-color: #FFD700;
-    color: #00008B; /* <--- CHANGED TO A DARKER BLUE FOR BETTER CONTRAST ON YELLOW */
+    color: #00008B; /* Dark blue for better contrast on yellow */
     padding: 1rem 2.5rem;
     border-radius: 9999px;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* <--- ADDED TRANSITION FOR TRANSFORM */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover effect for the button */
 .action-button:hover {
     background-color: #e6c200;
+    transform: scale(1.05); /* <--- ADDED TRANSFORM: Scales the button up by 5% on hover */
 }
 
 /* Responsive adjustments for screens wider than 768px (tablets and desktops) */
@@ -125,7 +126,7 @@ body {
 /* Responsive adjustments for screens up to 767px wide (mobile devices) */
 @media (max-width: 767px) {
     .hero-section {
-        padding: 1.5rem;
+        padding: 1.5rem; /* Slightly less padding on mobile */
         padding-top: 5rem;
     }
     .main-text {
@@ -144,5 +145,14 @@ body {
     .action-button {
         width: 100%;
         text-align: center;
+    }
+    /* RESPONSIVE ADJUSTMENT FOR HEADER/LOGO ON SMALL SCREENS */
+    .header {
+        top: 1.5rem; /* Adjust top position */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Pull back by half its width to truly center */
+    }
+    .logo-image {
+        width: 200px; /* Make logo a bit smaller on mobile for better fit */
     }
 }
